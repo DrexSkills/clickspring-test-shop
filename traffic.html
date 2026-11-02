@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Visitor simulator – Lumen test site</title><meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css"><style>.sim{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:20px 0}.sim button{justify-content:center;padding:16px}.ig{background:#e1306c}.tt{background:#111}.yt{background:#ff3b30}.gg{background:#f5a623;color:#16132b}.dr{background:#5b4cf0}
+ol{color:var(--muted)}code{background:var(--soft);padding:2px 6px;border-radius:6px}</style></head><body>
+<div class="wrap" style="padding:30px 22px 60px"><a class="brand" href="./"><i></i>Lumen</a>
+<h1 style="font-size:36px">Visitor simulator</h1>
+<p class="lead">Each button makes you a <b>brand-new visitor</b> arriving from that place. Then click around the site like a real person: read pricing, leave, or sign up.</p>
+<div class="sim"><button class="btn ig" data-src="instagram">Arrive from Instagram</button><button class="btn tt" data-src="tiktok">Arrive from TikTok</button><button class="btn yt" data-src="youtube">Arrive from YouTube</button><button class="btn gg" data-src="google">Arrive from Google</button><button class="btn dr" data-src="">Arrive directly</button></div>
+<div class="card"><h3>Ideas to test ClickSpring</h3><ol>
+<li>Arrive from TikTok 3 times and leave right away → see “leave without clicking” in Why They Leave.</li>
+<li>Arrive from Google, open Pricing, then sign up → you become a customer in Visitor Journeys.</li>
+<li>Arrive from Instagram, open Pricing, then close the tab → Pricing shows up as an exit page.</li>
+<li>Try it on your phone too → ClickSpring compares phones vs computers.</li>
+<li>Made a tracking link in ClickSpring? Paste it in your browser to test campaign tracking.</li>
+<li>Add <code>?cs_debug=1</code> to any page to see the green “ClickSpring ✓” badge.</li></ol>
+<p>Your test data shows up in ClickSpring under the website <b>“Lumen (test site)”</b>. Switch to it from the sidebar or Settings.</p></div></div>
+<script>document.addEventListener("click",function(e){var b=e.target.closest("[data-src]");if(!b)return;
+["cs_vid","cs_src","cs_camp"].forEach(function(k){try{localStorage.removeItem(k)}catch(_){}});
+try{sessionStorage.removeItem("cs_debug")}catch(_){}
+location.href="./"+(b.dataset.src?"?utm_source="+b.dataset.src:"");});</script></body></html>
